@@ -1,0 +1,34 @@
+#### Regras Xadrez ####\n
+\n
+1. Como as pecas se movem\n
+>Peoes (P): Podem mover-se uma casa para frente por vez;\n
+\t\tExceto no primeiro movimento, quando podem mover-se duas casas para frente\n
+\t\tSo podem capturar na diagonal\n
+>Torres (R): Podem mover-se quantas casas quiser horizontalmente e verticalmente\n
+>Cavalos (N): Podem mover-se duas casas em uma direcao e depois\n
+\t\tMover em um angulo de 90 graus em outra direcao, formando um "L"\n
+>Bispos (B): Podem mover-se quantas casas quiserem na diagonal\n
+>Rainha (Q): Podem mover-se quantas casas quiserem em qualquer direcao\n
+>Rei (K): So pode mover-se uma casa em qualquer direcao\n
+\n
+2. Movimentos Especiais\n
+>Promocao do Peao: Se um peao atravessa o tabuleiro e chega a ultima casa do\n
+\t\toutro lado, ele pode se transformar em qualquer peca, exceto o Rei\n
+>Roque: O rei pode mover-se duas casas para um lado, e a torre pode 'pular por cima'\n
+\t\tdo rei e parar ao seu lado\n
+>>Regras do Roque:\n
+Deve ser o primeiro movimento do rei\n
+Deve ser o primeiro movimento da torre\n
+Nao pode haver pecas entre o rei e a torre\n
+O rei nao pode estar em xeque ou passar por uma casa em xeque\n
+>En Passant: Se um peao avanca duas casas no seu primeiro movimento,\n
+\t\te com isso para ao lado de um peao adversario (efetivamente\n
+\t\tpulando a capacidade de captura do outro peao), esse peao adversario tem\n
+\t\ta opcao de capturar o peao que passou por ele.\n
+\n
+3. Como vencer\n
+>Xeque: Quando o Rei esta ameacado, mas pode escapar\n
+>Xeque-Mate: Quando o rei esta ameacado e nao pode se mover sem ser capturado\n
+>Empate: Se nao houver mais movimentos possiveis para nenhum dos jogadores\n
+>O Rei deve se mover se estiver ameacado\n
+\n
