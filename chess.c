@@ -4,18 +4,22 @@
 
 //Create the Translator Function 
 void translator(int language, int *message) {
-    const char *dictionary[2][4] = { //create the language*message table
+    const char *dictionary[2][5] = { //create the language*message table
 
         { //English table
             "Welcome to my chess game",
             "You've chosen English",
             "Do you know how to play?(0-Yes; 1-No)",
+            "how do you want to play? (0-Robot; 1-Friend)",
+            "Play as white or black? (0-White; 1-Black)"
         },
 
         { //Portuguese table
             "Bem-Vindo ao meu jogo de Xadrez",
             "Voce escolheu Portugues",
-            "Voce sabe jogar?(0-Sim; 1-Não)",
+            "Voce sabe jogar?(0-Sim; 1-Nao)",
+            "Como voce quer jogar? (0-Robo; 1-Amigo)",
+            "Jogar como Branco ou Preto? (0-Branco; 1-Preto)"
         }
 
     };
@@ -26,7 +30,7 @@ void translator(int language, int *message) {
 
 void rules(int language) {
     if (language == 0) {
-        printf("#### CHESS RULES ####\n\n");
+        printf("\n\n#### CHESS RULES ####\n\n");
         printf("1. How pieces Move\n");
         printf(">Pawns (P): Can move foward one square at a time;\n");
         printf("\t\tExcept on its first move, in which it can move foward two squares\n");
@@ -58,7 +62,7 @@ void rules(int language) {
         printf(">The King Must move if it's threatened\n");
     }
     else {
-        printf("#### Regras Xadrez ####\n\n");
+        printf("\n\n#### Regras Xadrez ####\n\n");
         printf("1. Como as pecas se movem\n");
         printf(">Peoes (P): Podem mover-se uma casa para frente por vez;\n");
         printf("\t\tExceto no primeiro movimento, quando podem mover-se duas casas para frente\n");
@@ -91,8 +95,22 @@ void rules(int language) {
     }
 };
 
+void board_representation() {
+
+    printf("\n|x|   a  |   b  |   c  |   d  |   e  |   f  |   g  |   h  |\n");
+    printf("\n|8|  bR  |  bN  |  bB  |  bQ  |  bK  |  bB  |  bN  |  bR  |\n");
+    printf("\n|7|  bP  |  bP  |  bP  |  bP  |  bP  |  bP  |  bP  |  bP  |\n");
+    printf("\n|6|      |######|      |######|      |######|      |######|\n");
+    printf("\n|5|######|      |######|      |######|      |######|      |\n");
+    printf("\n|4|      |######|      |######|      |######|      |######|\n");
+    printf("\n|3|######|      |######|      |######|      |######|      |\n");
+    printf("\n|2|  wP  |  wP  |  wP  |  wP  |  wP  |  wP  |  wP  |  wP  |\n");
+    printf("\n|1|  wR  |  wN  |  wB  |  wQ  |  wK  |  wB  |  wN  |  wR  |\n");
+
+};
+
 int main(void) {
-    int language, message = 0, how_play; //declare necessary variables
+    int language, message = 0, how_play, enemy, player_color; //declare necessary variables
 
     printf("0-English\n1-Portugues\n");
     scanf("%d", &language); //user choses the language it wants to paly on
@@ -109,7 +127,7 @@ int main(void) {
     scanf("%d", &how_play);
     
     if (how_play == 0) {
-        printf("\nokay");
+        printf("\nokay\n\n");
     }
     else if (how_play == 1) {
         rules(language);
@@ -117,6 +135,14 @@ int main(void) {
     else {
         printf("please insert a valid number");
     }
+
+    translator(language, &message);
+    scanf("%d", &enemy);
+
+    translator(language, &message);
+    scanf("%d", &player_color);
+
+    board_representation();
 
     return 0;
 }
